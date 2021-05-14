@@ -34,6 +34,7 @@ namespace ConsoleApp1
             using(var context = new AppDbContext())
             {
                 var product = context.Products.Where(x => x.Barcode == Convert.ToInt32(barcode)).ToList();
+                
                 Console.WriteLine(JsonConvert.DeserializeObject(product[0].ColorsAndSizes));
             }
         }
